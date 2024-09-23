@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="loans_form_view" model="ir.ui.view">
+        <field name="name">library.loans.form</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                        <field name="book_id"/>
+                        <field name="borrower_id"/>
+                        <field name="borrow_date"/>
+                        <field name="return_date"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="loans_tree_view" model="ir.ui.view">
+        <field name="name">library.loans.tree</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <tree string="loans">
+                 <field name="book_id"/>
+                        <field name="borrower_id"/>
+                        <field name="borrow_date"/>
+                        <field name="return_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="loans_action" model="ir.actions.act_window">
+        <field name="name">loans</field>
+        <field name="res_model">library.loan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+        <menuitem id="loans_menu" name="loans" action="loans_action" parent="library_menu_root"/>
+  
+</odoo>

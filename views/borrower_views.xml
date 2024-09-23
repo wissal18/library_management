@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="borrowers_form_view" model="ir.ui.view">
+        <field name="name">library.borrowers.form</field>
+        <field name="model">library.borrower</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="user_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="borrowers_tree_view" model="ir.ui.view">
+        <field name="name">library.borrowers.tree</field>
+        <field name="model">library.borrower</field>
+        <field name="arch" type="xml">
+            <tree string="borrowers">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="borrowers_action" model="ir.actions.act_window">
+        <field name="name">borrowers</field>
+        <field name="res_model">library.borrower</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+        <menuitem id="borrowers_menu" name="borrowers" action="borrowers_action" parent="library_menu_root"/>
+
+</odoo>
